@@ -33,12 +33,12 @@ export const AfricaSeroprevalenceChart = () => {
       <h3>{t('charts.africa_title')}</h3>
       <div style={{ width: '100%', height: '300px' }}>
         <ResponsiveContainer>
-          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
+          <BarChart data={data} margin={{ top: 20, right: 30, left: 30, bottom: 60 }}>
             <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
-            <XAxis dataKey="country" stroke="var(--text-secondary)" interval={0} angle={-45} textAnchor="end" />
-            <YAxis label={{ value: '% IgG Positive', angle: -90, position: 'insideLeft', fill: 'var(--text-secondary)' }} stroke="var(--text-secondary)" />
+            <XAxis dataKey="country" stroke="var(--text-secondary)" interval={0} angle={-45} textAnchor="end" tick={{ dy: 10 }} />
+            <YAxis label={{ value: '% IgG Positive', angle: -90, position: 'insideLeft', offset: -5, fill: 'var(--text-secondary)' }} stroke="var(--text-secondary)" />
             <Tooltip contentStyle={{ backgroundColor: 'var(--bg-card)', border: 'none', borderRadius: '8px', color: 'var(--text-primary)' }} />
-            <Legend wrapperStyle={{ color: 'var(--text-primary)' }} />
+            <Legend verticalAlign="top" wrapperStyle={{ color: 'var(--text-primary)', paddingBottom: '20px' }} />
             <Bar dataKey="infants" name="Infants/Children (%)" fill="var(--accent-red)" radius={[4, 4, 0, 0]} />
             <Bar dataKey="adults" name="Adults (%)" fill="var(--accent-dark-red)" radius={[4, 4, 0, 0]} />
           </BarChart>
