@@ -8,6 +8,7 @@ import Overview from './pages/Overview';
 import Virology from './pages/Virology';
 import Epidemiology from './pages/Epidemiology';
 import Pathogenesis from './pages/Pathogenesis';
+import AESReview from './pages/AESReview';
 import Diagnostics from './pages/Diagnostics';
 import Summary from './pages/Summary';
 
@@ -25,6 +26,7 @@ function AppContent() {
     { path: '/virology', label: t('nav.virology'), icon: Dna },
     { path: '/epidemiology', label: t('nav.epidemiology'), icon: Globe2 },
     { path: '/pathogenesis', label: t('nav.pathogenesis'), icon: Activity },
+    { path: '/aes-review', label: t('nav.aes_review'), icon: ShieldAlert },
     { path: '/diagnostics', label: t('nav.diagnostics'), icon: ShieldAlert },
     { path: '/summary', label: t('nav.summary'), icon: Search }
   ];
@@ -123,6 +125,7 @@ function AppContent() {
           <Route path="/virology" element={<Virology />} />
           <Route path="/epidemiology" element={<Epidemiology />} />
           <Route path="/pathogenesis" element={<Pathogenesis />} />
+          <Route path="/aes-review" element={<AESReview />} />
           <Route path="/diagnostics" element={<Diagnostics />} />
           <Route path="/summary" element={<Summary />} />
         </Routes>

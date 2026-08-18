@@ -26,6 +26,26 @@ const Diagnostics = () => {
           </p>
         </div>
       </div>
+
+      <div className="section-card mt-4">
+        <h3>{t('diagnostics.interp_title')}</h3>
+        <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
+          <li style={{ marginBottom: '10px' }}><strong>PCR positive / high viral load:</strong><br/> {t('diagnostics.interp_pcr_high')}</li>
+          <li style={{ marginBottom: '10px' }}><strong>PCR positive / antibody positive:</strong><br/> {t('diagnostics.interp_pcr_ab')}</li>
+          <li style={{ marginBottom: '10px' }}><strong>Tissue PCR positive / plasma negative:</strong><br/> {t('diagnostics.interp_tissue')}</li>
+          <li style={{ marginBottom: '10px' }}><strong>CSF PCR positive / serum positive:</strong><br/> {t('diagnostics.interp_csf_serum')}</li>
+          <li style={{ marginBottom: '10px' }}><strong>CSF PCR positive / serum negative:</strong><br/> {t('diagnostics.interp_csf_only')}</li>
+        </ul>
+      </div>
+
+      <div className="section-card mt-4 highlight">
+        <h3>{t('diagnostics.evidence_package_title')}</h3>
+        <ol>
+          {t('diagnostics.evidence_package', { returnObjects: true })?.map?.((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ol>
+      </div>
       <References citeIds={[1, 5, 7, 8, 9, 10, 12, 13, 14, 22, 23]} />
     </div>
   );
