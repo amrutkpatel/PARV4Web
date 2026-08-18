@@ -33,9 +33,9 @@ export const AfricaSeroprevalenceChart = () => {
       <h3>{t('charts.africa_title')}</h3>
       <div style={{ width: '100%', height: '300px' }}>
         <ResponsiveContainer>
-          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
             <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
-            <XAxis dataKey="country" stroke="var(--text-secondary)" />
+            <XAxis dataKey="country" stroke="var(--text-secondary)" interval={0} angle={-45} textAnchor="end" />
             <YAxis label={{ value: '% IgG Positive', angle: -90, position: 'insideLeft', fill: 'var(--text-secondary)' }} stroke="var(--text-secondary)" />
             <Tooltip contentStyle={{ backgroundColor: 'var(--bg-card)', border: 'none', borderRadius: '8px', color: 'var(--text-primary)' }} />
             <Legend wrapperStyle={{ color: 'var(--text-primary)' }} />
