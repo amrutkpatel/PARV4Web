@@ -53,7 +53,9 @@ function AppContent() {
   const handlers = useSwipeable({
     onSwipedLeft: () => handleSwipe('LEFT'),
     onSwipedRight: () => handleSwipe('RIGHT'),
-    delta: 50, // minimum distance to trigger swipe
+    delta: 30, // minimum distance to trigger swipe
+    preventScrollOnSwipe: true,
+    trackMouse: true
   });
 
   return (
