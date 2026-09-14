@@ -33,10 +33,14 @@ function AppContent() {
 
   useEffect(() => {
     // Automatically scroll the active tab head into view horizontally on mobile
-    const activeLink = document.querySelector('.nav-link.active');
-    if (activeLink) {
-      activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    }
+    // Added setTimeout to prevent the user's swiping touch from canceling the smooth scroll
+    const timeout = setTimeout(() => {
+      const activeLink = document.querySelector('.nav-link.active');
+      if (activeLink) {
+        activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }, 150);
+    return () => clearTimeout(timeout);
   }, [location.pathname]);
 
   const handleSwipe = (direction) => {
